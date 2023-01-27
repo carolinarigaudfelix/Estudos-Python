@@ -20,6 +20,7 @@ novos_produtos = [
     if (produto['preco'] >= 20 and produto['preco'] *1.05)> 10
 
 ]
+
 p(novos_produtos)
 
 # lista = [n for n in range(10) if n <5] #o if da direita é um filtro, pra estabelecer uma condição
