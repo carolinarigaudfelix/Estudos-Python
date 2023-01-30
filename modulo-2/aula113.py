@@ -1,6 +1,6 @@
 # map, partial, GeneratorType e esgotamento de Iterators
 
-from functools import partial
+from functools import partial #função que recebe uma função, um dos argumentos 
 from types import GeneratorType
 
 
@@ -44,7 +44,7 @@ def muda_preco_de_produtos(produto):
     }
 
 
-novos_produtos = list(map(
+novos_produtos = list(map( #map precisa de outra função, põe o list pra ver o valor do generator
     muda_preco_de_produtos,
     produtos
 ))
@@ -55,7 +55,7 @@ print_iter(novos_produtos)
 
 print(
     list(map(
-        lambda x: x * 3,
-        [1, 2, 3, 4]
+        lambda x: x * 3,        #função q multiplica a lista por 3
+        [1, 2, 3, 4] 
     ))
 )
