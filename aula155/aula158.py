@@ -6,13 +6,18 @@
 # Foi descrito na PEP 557 e adicionado na versão 3.7 do Python.
 # doc: https://docs.python.org/3/library/dataclasses.html
 
-from dataclasses import asdict, astuple, dataclass
+from dataclasses import dataclass, field #configura os campos na data class
 #syntax sugar pra criar uma classe mais facil
 
 @dataclass(repr=True, order=True) #congela a classe o frozen
 class Pessoa:
-    nome: str
-    sobrenome: str
+    nome: str = field(
+        default='MISSING', repr=False
+    )
+    sobrenome: str = 'Not sent'
+    idade: int = 100
+    enderecos: list[str] = field(default_factory=list) #sempre q n existir um 
+    #endereço, chama essa função list e cria um endereco
 
     # def __init__(self, nome, sobrenome):
     #     self.nome = nome
@@ -33,9 +38,10 @@ class Pessoa:
     #     self.sobrenome = ' '.join(sobrenome)
 
 if __name__ == '__main__':
-    p1 = Pessoa('Luiz', 'Otávio')
-    print(asdict(p1))
-    print(astuple(p1))
+    p1 = Pessoa()
+    #print(fields(p1)) RETORNA A CONFIGURAÇÃO DOS CAMPOS
+    print(p1)
+
     # lista = [ Pessoa('A', 'Z'), Pessoa('B', 'Z'), Pessoa('C', 'Z')]
     # ordenadas = sorted(lista, reverse=True, key=lambda p: p.sobrenome)
     # print(ordenadas)
