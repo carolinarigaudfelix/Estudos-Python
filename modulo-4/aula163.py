@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 
 fmt = '%d/%m/%Y %H:%M:%S'
 data_inicio = datetime.strptime('17/08/2003 09:30:30', fmt)
-data_fim = datetime.strptime('02/03/1996 08:20:20', fmt)
+data_fim = datetime.strptime('02/04/1996 08:20:20', fmt)
 delta = timedelta(days=10, hours =2)
 delta = relativedelta(data_inicio, data_fim)
 print(delta.days, delta.years)
