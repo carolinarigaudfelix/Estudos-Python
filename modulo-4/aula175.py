@@ -1,10 +1,10 @@
-#json.dump e json.load com arquivos
+#json.dump e json.load com arquivos ao invés de strings
 import json
 import os
 
 NOME_ARQUIVO = 'aula173.json'
 CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath(
-    os.path.join(
+    os.path.join( #une duas coisas, dirname e NOME_ARQUIVO
         os.path.dirname(__file__),
         NOME_ARQUIVO
     )
